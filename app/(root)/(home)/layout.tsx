@@ -1,11 +1,12 @@
 import React, { ReactNode } from 'react'
 import Sidebar from '@/components/Sidebar'
+import Navbar from '@/components/Navbar'
 
 const HomeLayout = ({ children }: {children: ReactNode}) => {
   return (
     <main className='bg-blue-400 relative'>
 
-      Navbar
+      <Navbar />
 
       <div className="bg-red-400 flex">
         <Sidebar/>
