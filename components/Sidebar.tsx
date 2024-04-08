@@ -17,7 +17,9 @@ const Sidebar = (props: Props) => {
       bg-orange-700 text-white sticky left-0 top-0 flex h-screen w-fit 
       flex-col justify-start p-5 pt-10 max-sm:hidden lg:w-[250px]"
     >
+
       <h1 className='bg-green-700 text-3xl mb-10'>Sidebar Here</h1>
+
       {/* List of links */}
       <div className="bg-blue-700 flex flex-col gap-2 rounded-xl">
         {sidebarLinks.map((item) => {
@@ -34,8 +36,8 @@ const Sidebar = (props: Props) => {
               <Image 
                 src={item.imgUrl}
                 alt={item.label}
-                width={50}
-                height={50}
+                width={25}
+                height={25}
               />
               <p>
                 {item.label}
