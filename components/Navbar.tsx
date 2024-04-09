@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import MobileNav from './MobileNav' 
+
 type Props = {}
 
 const Navbar = (props: Props) => {
@@ -19,6 +21,14 @@ const Navbar = (props: Props) => {
           Hazy Huddle
         </p>
       </Link>
+
+      <div className="flex-between gap-10">
+        {/* Clerk User Management */}
+
+        {/* Mobile Nav for smaller screen */}
+        <MobileNav />
+      </div>
+      
     </nav>
   )
 }
