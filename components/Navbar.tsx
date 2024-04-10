@@ -6,6 +6,8 @@ import MobileNav from './MobileNav'
 
 type Props = {}
 
+/* Custom classes: flex-between */
+
 const Navbar = (props: Props) => {
   return (
     <nav className="fixed flex-between z-20 w-full bg-yellow-700 p-6 lg:px-10">

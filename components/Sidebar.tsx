@@ -23,7 +23,7 @@ const Sidebar = (props: Props) => {
       {/* List of links */}
       <div className="bg-blue-700 flex flex-col gap-2 rounded-xl">
         {sidebarLinks.map((item) => {
-          const isActive = pathname === item.route || pathname.startsWith(item.route)
+          const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
 
           return(
             <Link 

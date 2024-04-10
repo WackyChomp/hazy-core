@@ -30,13 +30,13 @@ const MobileNav = (props: Props) => {
           <Image
             src={hamburgerIcon}
             alt='hamburger-icon'
-            width={36}
-            height={36}
-            className='cursor-pointer'
+            width={25}
+            height={25}
+            className='cursor-pointer rounded-lg bg-emerald-400'
           />
         </SheetTrigger>
 
-        <SheetContent side='left' className='border-none bg-slate-600'>
+        <SheetContent side='left' className='border-none bg-slate-900'>
           {/* Used from Navbar component */}
           <Link href='/' className='flex items-center gap-1'>
             <Image 
@@ -54,16 +54,16 @@ const MobileNav = (props: Props) => {
           {/* Used from Sidebar component */}
           <div className="flex flex-col justify-between overflow-y-auto h-[calc(100vh)-72px]">
             <SheetClose asChild>
-              <section className="flex flex-col h-full gap-6 pt-16 text-blue-400">
+              <section className="flex flex-col h-full gap-6 pt-16 text-blue-300">
                 {sidebarLinks.map((item) => {
-                  const isActive = pathname === item.route || pathname.startsWith(item.route)
+                  const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
 
                   return(
                     <Link 
                       href={item.route}
                       key={item.label}
                       className={cn('flex gap-4 items-center p-5 rounded-xl justify-start', 
-                        {'bg-purple-400' : isActive,}
+                        {'bg-purple-800' : isActive,}
                       )}
                     >
                       <Image 
@@ -72,7 +72,7 @@ const MobileNav = (props: Props) => {
                         width={25}
                         height={25}
                       />
-                      <p>
+                      <p className='font-semibold'>
                         {item.label}
                       </p>
                     </Link>
