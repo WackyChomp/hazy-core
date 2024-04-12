@@ -22,6 +22,18 @@
   </p>
 </div>
 
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#"></a></li>
+    <li><a href="#"></a></li>
+  </ol>
+</details>
+
 <br />
 
 
@@ -35,6 +47,22 @@ Here are some frameworks/libraries used in this project:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <br/>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+List of wonderful resources and credits to: 
+* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
+* [Malven's Grid Cheatsheet](https://grid.malven.co/)
+* [Font Awesome](https://fontawesome.com)
+* [Badge Shield](https://dev.to/envoy_/150-badges-for-github-pnk)
+<br><br>
+* [Tailwind CSS](https://tailwindcss.com/docs/installation) - CSS framework
+* [Next.js](https://nextjs.org/docs/getting-started/installation) - React Framework
+* [Clerk](https://clerk.com/) - Authentication + User Management
+* [Shadcn/ui](https://ui.shadcn.com/docs) - Customizable UI components
 
 
 <!-- MARKDOWN LINKS & IMAGES
