@@ -82,6 +82,14 @@ Make note of custom classes in files/components that use them
   }
 }
 
+
+.glassmorphism{
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(10px);
+}
+
+/*
 @layer base {
   * {
     @apply border-border;
@@ -90,3 +98,4 @@ Make note of custom classes in files/components that use them
     @apply bg-background text-foreground;
   }
 }
+*/
