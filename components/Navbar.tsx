@@ -7,7 +7,7 @@ import { SignedIn, UserButton } from '@clerk/nextjs'
 
 type Props = {}
 
-/* Custom classes: flex-between */
+/* Used custom classes from global.css: flex-between */
 
 const Navbar = (props: Props) => {
   return (
