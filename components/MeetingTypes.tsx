@@ -69,6 +69,8 @@ const MeetingTypes = (props: Props) => {
         className='bg-black'
       />
 
+
+      {/* Modal opens depending on meetingState */}
       <MeetingModal 
         isOpen={meetingState === 'isInstantMeeting'}
         onClose={() => setMeetingState(undefined)}
