@@ -34,7 +34,7 @@ const MeetingTypes = (props: Props) => {
   const [callDetails, setCallDetails] = useState<Call>();
 
   const createMeeting = async() => {
-    if(!client || user) return;       // no client + user = exit out without create meeting
+    if(!client || !user) return;       // no client + user = nothing happens or exit out without create meeting
 
     try {
       const id = crypto.randomUUID();     // generate random id for meeting call
