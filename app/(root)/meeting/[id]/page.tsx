@@ -14,7 +14,7 @@ const Meeting = ({ params: {id} }: { params: { id: string } }) => {
 
   const { call, isCallLoading } = useGetCallById(id);
 
-  if(!isLoaded || !isCallLoading) return <Loader />
+  if(!isLoaded || isCallLoading) return <Loader />
 
   if(!call) return(
     <p className="text-green-400">No call has been found</p>
@@ -22,7 +22,7 @@ const Meeting = ({ params: {id} }: { params: { id: string } }) => {
 
   return (
     <main className="h-screen w-full">
-      <StreamCall>
+      <StreamCall call={call}>
         <StreamTheme>
           {!isSetupComplete ? (
             <MeetingSetup />      // waiting room
