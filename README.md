@@ -9,7 +9,7 @@
   <h3 align="center">Hazy Huddle</h3>
 
   <p align="center">
-    Click away from hosting/joining a discrete  conference
+    One click away from hosting/joining a discrete conference
     <br />
     <br />
     <a href="https://github.com/WackyChomp/hazy-core"><strong>Explore the docs »</strong></a>
@@ -27,14 +27,27 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#roadmap">Road Map</a></li>
     <li><a href="#"></a></li>
     <li><a href="#"></a></li>
   </ol>
 </details>
 
 <br />
+
+
+
+## About The Project
+Need an environment to conduct a video chat? Look no further with <u><b>Hazy Huddle</b></u>
+
+One of the best ways to build genuine and meaningful connection is being able to visualize the interaction.
+It's difficult to place trust in a person or people if you can not see them. Being able to interact with others 
+remotely is incredibly convenient and an amazing feat given the advent of technology.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## Built With
@@ -47,6 +60,18 @@ Here are some frameworks/libraries used in this project:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <br/>
+
+
+## Roadmap
+<h3>Features (WIP Todo)</h3>
+
+- [] Establish dashboard layout
+- [x] Authentication with Clerk
+- [] Finalize color themes
+- [] Mobile responsive
+- []
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 

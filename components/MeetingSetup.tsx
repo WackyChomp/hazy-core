@@ -14,7 +14,7 @@ import { DeviceSettings } from '@stream-io/video-react-sdk'
 
 type Props = {}
 
-const MeetingSetup = (props: Props) => {
+const MeetingSetup = ({ setIsSetupComplete }: { setIsSetupComplete: (value: boolean) => void }) => {
   const [isMicAndCamToggledOn, setisMicAndCamToggledOn] = useState(false);
 
   const call = useCall();
@@ -54,7 +54,14 @@ const MeetingSetup = (props: Props) => {
         <DeviceSettings />
       </div>
 
-      <Button>
+      {/* Redirects to MeetingRoom component */}
+      <Button 
+        className='bg-orange-800 rounded-md'
+        onClick={()=> {
+          call.join()
+          setIsSetupComplete(true)
+        }}
+      >
         Join Meeting
       </Button>
 
