@@ -3,6 +3,20 @@ import { CallParticipantsList, PaginatedGridLayout, SpeakerLayout } from '@strea
 import React, { useState } from 'react'
 import { cn } from '@/lib/utils'
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+
+/*
+Renders room with all participants and video control settings
+*/
+
 type Props = {}
 type CallLayoutType = 'grid' | 'speaker-left' | 'speaker-right'
 
@@ -31,6 +45,18 @@ const MeetingRoom = (props: Props) => {
         <div className={cn(`h-[calc(100vh-90px)] hidden ml-2`, {'show-block': showParticipants})}>
           <CallParticipantsList onClose={() => setShowParticipants(false)} />
         </div>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Billing</DropdownMenuItem>
+            <DropdownMenuItem>Team</DropdownMenuItem>
+            <DropdownMenuItem>Subscription</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </section>
   )

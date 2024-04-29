@@ -24,12 +24,13 @@ const Meeting = ({ params: {id} }: { params: { id: string } }) => {
     <main className="h-screen w-full">
       <StreamCall call={call}>
         <StreamTheme>
+          {/* Goes from MeetingSetup then redirects to Meeting Room */}
           {!isSetupComplete ? (
             <MeetingSetup 
               setIsSetupComplete={setIsSetupComplete}
             />
           ):(
-            <MeetingRoom />       // 
+            <MeetingRoom />
           )}
         </StreamTheme>
       </StreamCall>
