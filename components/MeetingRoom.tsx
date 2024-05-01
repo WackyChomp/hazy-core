@@ -1,7 +1,9 @@
 
-import { CallParticipantsList, PaginatedGridLayout, SpeakerLayout } from '@stream-io/video-react-sdk'
 import React, { useState } from 'react'
+import { CallParticipantsList, CallStatsButton, PaginatedGridLayout, SpeakerLayout } from '@stream-io/video-react-sdk'
 import { cn } from '@/lib/utils'
+import { Button } from './ui/button'
+import { LayoutList, User } from 'lucide-react'
 
 import {
   DropdownMenu,
@@ -47,16 +49,38 @@ const MeetingRoom = (props: Props) => {
         </div>
 
         <DropdownMenu>
-          <DropdownMenuTrigger>Open</DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
+          <div className="flex items-center">
+            <DropdownMenuTrigger className='cursor-pointer rounded-2xl bg-red-400 p-5 hover:bg-green-400'>
+              <LayoutList size={40} className='text-purple-800'/>
+            </DropdownMenuTrigger>
+          </div>
+
+          <DropdownMenuContent className='border-blue-800 bg-slate-500 text-white'>
+            {['Grid', 'Speaker-Left', 'Speaker-Right'].
+              map((item, index) => (
+                <div key={index}>
+                  <DropdownMenuItem 
+                    className='cursor-pointer'
+                    onClick={() => {
+                      setLayout(item.toLowerCase() as CallLayoutType)
+                    }}
+                  >
+                    {item}
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator className='border-green-600'/>
+                </div>
+              ))}
           </DropdownMenuContent>
         </DropdownMenu>
+
+        <CallStatsButton />
+
+        {/* See/Hide Participants on call */}
+        <Button onClick= {()=> setShowParticipants( (prev) => !prev) }>
+          <div className="cursor-pointer rounded-4xl bg-orange-400 p-5 hover:bg-blue-400">
+            <User size={40} className='text-orange-800' />
+          </div>
+        </Button>
       </div>
     </section>
   )
