@@ -13,6 +13,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import EndCallButton from './EndCallButton'
+import { useSearchParams } from 'next/navigation'
 
 
 /*
@@ -25,6 +27,9 @@ type CallLayoutType = 'grid' | 'speaker-left' | 'speaker-right'
 const MeetingRoom = (props: Props) => {
   const [layout, setLayout] = useState<CallLayoutType>('speaker-left')
   const [showParticipants, setShowParticipants] = useState(false)
+
+  const searchParams = useSearchParams();
+  const isPersonalRoom = !!searchParams.get('personal');    // !! - 1st becomes false , 2nd makes it true
   
   const CallLayout = () => {
     switch (layout) {
@@ -81,6 +86,8 @@ const MeetingRoom = (props: Props) => {
             <User size={40} className='text-orange-800' />
           </div>
         </Button>
+
+        {!isPersonalRoom && <EndCallButton/>}
       </div>
     </section>
   )
