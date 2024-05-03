@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { CallParticipantsList, CallStatsButton, PaginatedGridLayout, SpeakerLayout } from '@stream-io/video-react-sdk'
+import { CallParticipantsList, CallStatsButton, PaginatedGridLayout, SpeakerLayout, useCallStateHooks } from '@stream-io/video-react-sdk'
 import { cn } from '@/lib/utils'
 import { Button } from './ui/button'
 import { LayoutList, User } from 'lucide-react'
@@ -13,8 +13,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+
 import EndCallButton from './EndCallButton'
 import { useSearchParams } from 'next/navigation'
+import Loader from './Loader'
 
 
 /*
@@ -30,6 +32,10 @@ const MeetingRoom = (props: Props) => {
 
   const searchParams = useSearchParams();
   const isPersonalRoom = !!searchParams.get('personal');    // !! - 1st becomes false , 2nd makes it true
+
+  const {useCallCallingState} = useCallStateHooks();
+  const callingState = useCallCallingState();
+  if (callingState !== CallingState.JOINED) return <Loader/>
   
   const CallLayout = () => {
     switch (layout) {

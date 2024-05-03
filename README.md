@@ -29,6 +29,7 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
+    <li><a href="#folder-structure">Folder Structure</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
     <li><a href="#roadmap">Road Map</a></li>
     <li><a href="#"></a></li>
@@ -60,6 +61,39 @@ Here are some frameworks/libraries used in this project:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <br/>
+
+
+## Folder Structure
+General overview of folder/files
+```
+| - actions/
+| - app/
+    |-- (auth)/
+        |-- (sign-in)/
+        |-- (sign-up)/
+    |-- (root)/
+        |-- (home)/
+            |-- upcoming/
+            |-- layout.tsx/
+            |-- page.tsx/
+        |-- meeting/
+            |-- [id]/
+        |-- layout.tsx
+    |-- globals.css
+    |-- layout.tsx
+| - components/
+    |-- ui/
+| - /constants
+| - /hook
+| - lib/
+| - providers/
+| - public/
+    |-- .ts
+    |-- .ts
+    |-- .ts
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## Roadmap
