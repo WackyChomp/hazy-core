@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { CallParticipantsList, CallStatsButton, PaginatedGridLayout, SpeakerLayout, useCallStateHooks } from '@stream-io/video-react-sdk'
+import { CallControls, CallParticipantsList, CallStatsButton, CallingState, PaginatedGridLayout, SpeakerLayout, useCallStateHooks } from '@stream-io/video-react-sdk'
 import { cn } from '@/lib/utils'
 import { Button } from './ui/button'
 import { LayoutList, User } from 'lucide-react'
@@ -50,6 +50,8 @@ const MeetingRoom = (props: Props) => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden pt-10 text-yellow-500">
+
+      {/* Screen */}
       <div className="relative flex size-full items-center justify-center">
         <div className="flex size-full max-w-[1000px] items-center">
           <CallLayout />
@@ -58,6 +60,12 @@ const MeetingRoom = (props: Props) => {
         <div className={cn(`h-[calc(100vh-90px)] hidden ml-2`, {'show-block': showParticipants})}>
           <CallParticipantsList onClose={() => setShowParticipants(false)} />
         </div>
+      </div>
+
+      {/* Controls and menu items below the screen */}
+      <div className="fixed bottom-0 flex w-full items-center justify-center gap-5 flex-wrap">
+
+        <CallControls />
 
         <DropdownMenu>
           <div className="flex items-center">
