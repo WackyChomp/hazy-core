@@ -8,6 +8,7 @@ import { useUser } from '@clerk/nextjs';
 import { useStreamVideoClient } from '@stream-io/video-react-sdk';
 import { Call } from '@stream-io/video-react-sdk';
 import { useToast } from './ui/use-toast';
+import { Textarea } from './ui/textarea';
 
 
 type Props = {}
@@ -124,11 +125,37 @@ const MeetingTypes = (props: Props) => {
 
 
       {/* Modal opens depending on meetingState */}
+      {!callDetails ? (
+        // Create a new schedule meeting 
+        <MeetingModal 
+          isOpen={meetingState === 'isScheduleMeeting'}
+          onClose={() => setMeetingState(undefined)}
+          title='Create a New Meeting Now!!!'
+          handleClick={createMeeting}
+        >
+          <div className="flex flex-col gap-4">
+            <label className='text-blue-900 text-lg'>
+              Description goes brrrrrrrr. Such a description of all time.
+              Even <b>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+              Repellendus, excepturi?</b> doesn't stand a chance!
+            </label>
+            <Textarea className='border-none bg-dark-2 text-white focus-visible:ring-0 focus-visible:ring-offset-0' />
+          </div>
+        </MeetingModal>
+      ):(
+        // Schedule Meeting exist = shows copy link instead 
+        <MeetingModal 
+          isOpen={meetingState === 'isScheduleMeeting'}
+          onClose={() => setMeetingState(undefined)}
+          title='Meeting Created!!'
+          buttonText='Copy Meeting Link'
+          handleClick={() => {}}
+        />
+      )}
       <MeetingModal 
         isOpen={meetingState === 'isInstantMeeting'}
         onClose={() => setMeetingState(undefined)}
         title='Start an Instant Meeting Now!!!'
-        className='text-pink-400'
         buttonText='Start Meeting'
         handleClick={createMeeting}
       />
