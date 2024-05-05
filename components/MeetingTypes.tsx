@@ -9,6 +9,7 @@ import { useStreamVideoClient } from '@stream-io/video-react-sdk';
 import { Call } from '@stream-io/video-react-sdk';
 import { useToast } from './ui/use-toast';
 import { Textarea } from './ui/textarea';
+import ReactDatePicker from 'react-datepicker';
 
 
 type Props = {}
@@ -139,11 +140,31 @@ const MeetingTypes = (props: Props) => {
               Even <b>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
               Repellendus, excepturi?</b> doesn't stand a chance!
             </label>
-            <Textarea className='border-none bg-dark-2 text-white focus-visible:ring-0 focus-visible:ring-offset-0' />
+            <Textarea 
+              className='border-none bg-dark-2 text-white focus-visible:ring-0 focus-visible:ring-offset-0' 
+              onChange={(e) => {
+                setValues({...values, description:e.target.value})
+              }}
+            />
+          </div>
+          <div className="flex flex-col w-full gap-3">
+            <label className='text-lg leading-[30px] text-red-700 font-bold'>
+              Select Date and Time
+            </label>
+            <ReactDatePicker 
+              selected={values.dateTime}
+              onChange={(date) => setValues({...values, dateTime: date!})}
+              showTimeSelect
+              timeFormat='HH:mm'
+              timeIntervals={15}
+              timeCaption='time'
+              dateFormat='MMMM d, yyyy, h:mm aa'
+              className='w-full rounded bg-green-500'
+            />
           </div>
         </MeetingModal>
       ):(
-        // Schedule Meeting exist = shows copy link instead 
+        // After creating meeting => shows "copy meeting link"
         <MeetingModal 
           isOpen={meetingState === 'isScheduleMeeting'}
           onClose={() => setMeetingState(undefined)}
