@@ -83,8 +83,8 @@ General overview of folder/files
     |-- layout.tsx
 | - components/
     |-- ui/
-| - /constants
-| - /hook
+| - constants/
+| - hook/
 | - lib/
 | - providers/
 | - public/
@@ -101,9 +101,10 @@ General overview of folder/files
 
 - [] Establish dashboard layout
 - [x] Authentication with Clerk
+- [x] Connect GetStream.io for video feed
 - [] Finalize color themes
 - [] Mobile responsive
-- []
+- [] Multiple people can join a call with unique link
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -122,7 +123,7 @@ List of wonderful resources and credits to:
 * [Next.js](https://nextjs.org/docs/getting-started/installation) - React Framework
 * [Clerk](https://clerk.com/) - Authentication + User Management
 * [Shadcn/ui](https://ui.shadcn.com/docs) - Customizable UI components
-
+* [GetStream.io](https://getstream.io/video/docs/react/) - SDK for creating video feeds
 
 <!-- MARKDOWN LINKS & IMAGES
 https://www.markdownguide.org/basic-syntax/#reference-style-links
